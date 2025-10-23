@@ -29,6 +29,28 @@ import { ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
+
+
+  {
+    title: 'Knjižnica',
+    caption: 'Knjižnica - početna stranica',
+    icon: 'local_library',
+    link: '#/',
+  },
+  {
+    title: 'Knjižnica - nove knjige',
+    caption: 'Popis novih dostupnih knjiga u knjižnici',
+    icon: 'book',
+    link: '#/PopisNovihKnjiga',
+  },
+
+  {
+    title: 'Knjižnica - popis knjiga',
+    caption: 'Popisdostupnih knjiga u knjižnici',
+    icon: 'book',
+    link: '#/PopisKnjiga',
+  },
+
   {
     title: 'Docs',
     caption: 'quasar.dev',
