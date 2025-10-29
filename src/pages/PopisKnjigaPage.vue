@@ -1,37 +1,146 @@
 <template>
-  <q-page padding>
-    <!-- content -->
-
-     <q-toolbar class="bg-grey-9 text-white">
-      <q-toolbar-title>Popis knjiga</q-toolbar-title>
-     </q-toolbar>
-
-<div class="q-pa-md" style="max-width: 350px">
-    <q-list bordered separator>
-      <q-item clickable v-ripple>
-        <q-item-section>Single line item</q-item-section>
-      </q-item>
-
-      <q-item clickable v-ripple>
-        <q-item-section>
-          <q-item-label>Item with caption</q-item-label>
-          <q-item-label caption>Caption</q-item-label>
-        </q-item-section>
-      </q-item>
-
-      <q-item clickable v-ripple>
-        <q-item-section>
-          <q-item-label overline>OVERLINE</q-item-label>
-          <q-item-label>Item with overline</q-item-label>
-        </q-item-section>
-      </q-item>
-    </q-list>
+  <div class="q-pa-md">
+    <q-table
+      title="Popis svih knjiga"
+      :rows="rows"
+      :columns="columns"
+      row-key="name"
+    />
   </div>
-  </q-page>
 
-  
 </template>
 
-<script setup>
-//
+<script>
+const columns = [
+  {
+    name: 'Knjiga',
+    required: true,
+    label: 'Knjiga',
+    align: 'left',
+    field: row => row.name,
+    format: val => `${val}`,
+    sortable: true,
+    style: {
+      fontSize:'14px'
+    },
+    headerStyle: {
+      fontSize: '18px'
+    }
+  },
+  { name: 'ID',
+    
+   label: 'ID', 
+   field: 'ID', 
+   sortable: true, 
+  style: {
+      fontSize:'14px'
+    },
+    headerStyle: {
+      fontSize: '18px'
+    }
+ },
+  { name: 'Naslov',
+   
+   label: 'Naslov',
+    field: 'Naslov', 
+    sortable: true,
+    style: {
+      fontSize:'14px'
+    },
+    headerStyle: {
+      fontSize: '18px'
+    }
+  },
+  { name: 'Autor',
+   
+   label: 'Autor',
+    field: 'Autor',
+  style: {
+      fontSize:'14px'
+    },
+    headerStyle: {
+      fontSize: '18px'
+    } },
+
+  { name: 'Opis', 
+   
+  label: 'Opis',
+   field: 'Opis',
+  style: {
+      fontSize:'14px'
+    },
+    headerStyle: {
+      fontSize: '18px'
+    }
+
+  },
+  { name: 'Slika',
+   
+   label: 'Slika',
+    field: 'Slika',
+  style: {
+      fontSize:'14px'
+    },
+    headerStyle: {
+      fontSize: '18px'
+    } },
+
+  { name: 'Status',
+  
+   label: 'Status',
+    field: 'Status',
+     sortable: true, sort: (a, b) => parseInt(a, 10) - parseInt(b, 10),
+    style: {
+      fontSize:'14px'
+    },
+    headerStyle: {
+      fontSize: '18px'
+    } }
+]
+
+const rows = [
+  {
+    name:'Mali princ',
+    ID:'234',
+    Naslov:'Mali princ',
+    Autor:'jk',
+    Opis:'krk',
+    Slika:'da',
+    Status:'zauzeta'
+
+
+    
+  },
+  {
+    name: 'Lovac u žitu',
+     ID:'234',
+    Naslov:'Lovac u zitu',
+    Autor:'j.s',
+    Opis:'k',
+    Slika:'ne',
+    Status:'zauzeta'
+    
+  },
+  {
+    name: 'Preobrazba',
+     ID:'234',
+    Naslov:'Preobrazba',
+    Autor:'fk',
+    Opis:'k',
+    Slika:'da',
+    Status:'slobodna'
+
+   
+  }
+  
+]
+
+export default {
+  setup () {
+    return {
+      columns,
+      rows
+    }
+  }
+}
 </script>

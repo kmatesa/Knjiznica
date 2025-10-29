@@ -40,7 +40,7 @@ const linksList = [
   {
     title: 'Knjižnica - nove knjige',
     caption: 'Popis novih dostupnih knjiga u knjižnici',
-    icon: 'book',
+    icon: 'library_books',
     link: '#/PopisNovihKnjiga',
   },
 
@@ -51,6 +51,30 @@ const linksList = [
     link: '#/PopisKnjiga',
   },
 
+  {
+    title: 'Pretraživanje',
+    caption: 'Pretraživanje knjiga',
+    icon: 'search',
+    link: '#/Pretrazivanje',
+  },
+  {
+    title: 'Lokacija',
+    caption: 'Lokacija',
+    icon: 'location_on',
+    link: '#/Lokacija',
+  },
+  {
+    title: 'Login',
+    caption: 'Login',
+    icon: 'person',
+    link: '#/Login',
+  },
+  {
+    title: 'Registracija',
+    caption: 'Registracija',
+    icon: 'person',
+    link: '#/Registracija',
+  },
   {
     title: 'Docs',
     caption: 'quasar.dev',
