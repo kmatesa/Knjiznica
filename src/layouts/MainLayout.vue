@@ -75,6 +75,13 @@ const linksList = [
     icon: 'person',
     link: '#/Registracija',
   },
+
+  {
+    title: 'TEST',
+    caption: 'Test',
+    icon: 'person',
+    link: '#/Test',
+  },
   {
     title: 'Docs',
     caption: 'quasar.dev',

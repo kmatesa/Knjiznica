@@ -9,8 +9,9 @@ const routes = [
               {path: '/Pretrazivanje', component: () => import ('pages/PretrazivanjePage.vue')},
               {path: '/Lokacija', component: () => import ('pages/LokacijaPage.vue')},
               {path: '/Login', component: () => import ('pages/LoginPage.vue')},
-              {path: '/Registracija', component: () => import ('pages/RegistracijaPage.vue')}
-
+              {path: '/Registracija', component: () => import ('pages/RegistracijaPage.vue')},
+              {path: '/Test', component: () => import ('pages/TestPage.vue')}
+                
             ],
   },
 
