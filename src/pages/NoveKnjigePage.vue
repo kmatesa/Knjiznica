@@ -50,7 +50,7 @@
 
 
     <q-card class="my-card">
-      <img src="https://www.profil.hr/wp-content/uploads/Mali-princ-scaled.jpegq">
+      <img src="https://mozaik-knjiga.hr/wp-content/uploads/2024/12/Mali_princ_web.jpg">
 
       <q-card-section>
         <div class="text-h6">Mali princ</div>

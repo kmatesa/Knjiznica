@@ -31,7 +31,7 @@
 
       <div>
         <q-btn label="Prijavi se" type="Prijavi se" color="primary"/>
-        <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+        
       </div>
     </q-form>
 
