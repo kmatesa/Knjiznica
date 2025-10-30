@@ -23,6 +23,12 @@
  
 </template>
 
-<script>
 
+<script>
+import { ref } from 'vue'
+
+export default {
+  setup () {
+    return {
+      teal: ref(true)}}}
 </script>
