@@ -27,6 +27,12 @@
       </q-card-actions>
     </q-card>
   </div>
+ <div class="q-gutter-md" style="max-width: 300px">
+   <q-input v-model="title" label="Title" />
+    <q-input v-model="author" label="Author" />
+     <q-input v-model="text" label="Text" />
+     <q-btn flat @click="save()">Save</q-btn>
+</div>
   </q-page>
 </template>
 
@@ -52,12 +58,12 @@ const msg = [
     text:'Lorem.'
   }
 ]
-//const title='Changing planet'
-//const author='John Doe'
-  //const  text= 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 
 let unread = ref(22)
 let open = ref(4)
+let title=ref('')
+let author=ref('')
+let text=ref('')
 
 function openMsg(){
   open.value -= 1 
@@ -74,6 +80,11 @@ console.log("Delete "+unread.value)
 
 }
 
+function save(){
+ 
+  msg.push({title:title.value, author:author.value, text:text.value})
+   console.log(msg)
+}
 
 </script>
 

@@ -135,7 +135,7 @@ const linksList = [
     title: 'GitHub knjiznica',
     caption: 'GitHub projekt knjiznica',
     icon: 'library_books',
-    link: 'https://github.com/kmatesa/knjiznica1',
+    link: 'https://github.com/kmatesa/Knjiznica.git',
   },
   {
     title: 'Veleuciliste u Rijeci',
