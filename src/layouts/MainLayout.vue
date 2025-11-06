@@ -82,6 +82,13 @@ const linksList = [
     icon: 'person',
     link: '#/Test',
   },
+{
+    title: 'TEST1',
+    caption: 'Test1',
+    icon: 'person',
+    link: '#/Test1',
+  },
+
   {
     title: 'Docs',
     caption: 'quasar.dev',

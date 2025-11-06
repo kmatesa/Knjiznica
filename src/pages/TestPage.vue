@@ -28,7 +28,6 @@
 
 <script setup>
 
-
 //
 const poruka = "Test page"
 const tijelo = "Tekst na stranici"
