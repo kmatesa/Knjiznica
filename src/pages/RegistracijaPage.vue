@@ -47,7 +47,7 @@
         lazy-rules
         :rules="[
           val => val !== null && val !== '' || 'Molimo da kreirate lozinku',
-          val => val > 0 && val < 100 || 'Please type a real age'
+          val => val > 0 && val < 100 || 'Molimo da unesete lozinku'
         ]"
       />
 
