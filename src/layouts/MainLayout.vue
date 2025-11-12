@@ -88,6 +88,12 @@ const linksList = [
     icon: 'person',
     link: '#/Test1',
   },
+  {
+    title: 'Unos knjiga',
+    caption: 'Unos novih knjiga',
+    icon: 'book',
+    link: '#/UnosKnjiga',
+  },
 
   {
     title: 'Docs',
