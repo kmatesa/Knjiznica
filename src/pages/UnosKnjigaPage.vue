@@ -1,12 +1,12 @@
 <template>
   <div class="q-pa-md">
-    <!-- Inputi -->
+    
     <q-input v-model="textID" label="ID" readonly />
     <q-input v-model="textKnjiga" label="Knjiga" />
     <q-input v-model="textAutor" label="Autor" />
     <q-input v-model="textOpis" label="Opis" />
 
-    <!-- File input -->
+    
     <q-file
       v-model="file"
       label="Pick one file"
@@ -14,12 +14,12 @@
       style="max-width: 300px"
       @update:model-value="handleFileChange"
     />
-    <!-- Thumbnail preview ispod file inputa -->
+ 
     <div v-if="imagePreview" style="margin-top:10px; display:flex; justify-content:flex-start;">
       <img :src="imagePreview" alt="Preview" style="max-width:100px; max-height:100px;" />
     </div>
 
-    <!-- Checkboxovi (radio-style) -->
+    
     <q-checkbox
       v-model="valSlobodna"
       label="Slobodna"
@@ -36,11 +36,10 @@
 
     <br />
 
-    <!-- Dugmad -->
     <q-btn color="blue" text-color="white" label="Spremi" class="q-mr-sm q-mb-lg" @click="dodajKnjigu" />
     <q-btn color="blue" text-color="white" label="Odustani" class="q-mb-lg" @click="resetirajFormu" />
 
-    <!-- Card prikaz knjiga -->
+    
     <div class="q-gutter-md q-mt-lg row wrap">
       <q-card v-for="row in rows" :key="row.ID" class="col-12 col-md-4">
         <q-card-section>
@@ -49,7 +48,8 @@
           <div><strong>Autor:</strong> {{ row.Autor }}</div>
           <div><strong>Opis:</strong> {{ row.Opis }}</div>
           <div><strong>Slika:</strong></div>
-          <!-- Slika u vlastitom divu, centrirana -->
+          
+
           <div class="q-mt-sm" style="display:flex; justify-content:center;">
             <img v-if="row.Slika" :src="row.Slika" alt="Slika" style="max-width:80px; max-height:80px;" />
             <span v-else>-</span>
@@ -59,7 +59,7 @@
       </q-card>
     </div>
 
-    <!-- Tablica -->
+   
     <q-table
       title="Popis svih knjiga"
       :rows="rows"
@@ -82,7 +82,7 @@ import { ref, reactive } from 'vue'
 
 export default {
   setup() {
-    // Kolone tablice
+    
     const columns = [
       { name: 'ID', label: 'ID', field: 'ID', sortable: true },
       { name: 'Naslov', label: 'Knjiga', field: 'Naslov', sortable: true },
@@ -92,10 +92,10 @@ export default {
       { name: 'Status', label: 'Status', field: 'Status' }
     ]
 
-    // Niz knjiga
+    
     const rows = reactive([])
 
-    // Inputi
+  
     const textID = ref(1)
     const textKnjiga = ref('')
     const textAutor = ref('')
@@ -103,10 +103,10 @@ export default {
     const file = ref(null)
     const imagePreview = ref(null)
 
-    // Checkboxovi (radio-style)
+    
     const valSlobodna = ref(false)
     const valZauzeta = ref(false)
-    const status = ref('slobodna') // default status
+    const status = ref('slobodna') 
 
     const onStatusChange = (selected) => {
       if (selected === 'slobodna') {
@@ -120,7 +120,7 @@ export default {
       }
     }
 
-    // Funkcija za thumbnail
+    
     const handleFileChange = (f) => {
       if (!f) {
         imagePreview.value = null
@@ -139,7 +139,7 @@ export default {
         Naslov: textKnjiga.value,
         Autor: textAutor.value,
         Opis: textOpis.value,
-        Slika: imagePreview.value, // dodajemo thumbnail
+        Slika: imagePreview.value, 
         Status: status.value
       })
       textID.value++
