@@ -9,7 +9,7 @@
     
     <q-file
       v-model="file"
-      label="Pick one file"
+      label="Dodajte datoteku"
       filled
       style="max-width: 300px"
       @update:model-value="handleFileChange"
@@ -23,14 +23,14 @@
     <q-checkbox
       v-model="valSlobodna"
       label="Slobodna"
-      inline
+   
       class="q-mr-md"
       @update:model-value="onStatusChange('slobodna')"
     />
     <q-checkbox
       v-model="valZauzeta"
       label="Zauzeta"
-      inline
+     
       @update:model-value="onStatusChange('zauzeta')"
     />
 
@@ -61,7 +61,7 @@
 
    
     <q-table
-      title="Popis svih knjiga"
+      title="Popis novo unesenih knjiga"
       :rows="rows"
       :columns="columns"
       row-key="ID"
