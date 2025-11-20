@@ -28,7 +28,7 @@ connection.connect(function(err) {
   });
 
 app.get("/api/knjige", (req, res) => {
-  connection.query("SELECT * FROM knjige", (error, results) => {
+  connection.query("SELECT * FROM knjiga", (error, results) => {
     if (error) throw error;
     res.send(results);
   });
@@ -36,12 +36,14 @@ app.get("/api/knjige", (req, res) => {
   
 app.post("/api/rezerv_knjige", (req, res) => {
   const data = req.body;
-  rezervacija = [['2025-10-30', data.id_knjiga, data.id_korisnik]]
-  connection.query("INSERT INTO rezervacija (datum_rez, knjiga, korisnik) VALUES ?", [rezervacija], (error, results) => {
+  rezervacija = [[ data.datum, data.id_knjiga, data.id_korisnik]]
+  connection.query("INSERT INTO rezervacija (datum_rezervacije, knjiga, korisnik) VALUES ?", [rezervacija], (error, results) => {
     if (error) throw error;
     res.send(results);
   });
 });
+
+
 
 app.listen(port, () => {
     console.log("Server running at port: " + port);
